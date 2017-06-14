@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    The Project places the main layout in a vertical fashion so it goes down the app
+    The lines themselves will be horizontal in nature
+    The app can only be in portrait mode
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,116 +12,105 @@
     android:orientation="vertical"
     android:layout_gravity="center_horizontal|center_vertical"
     tools:context="com.example.patrick.gratuity.MainActivity">
-    <ScrollView
+
+    <!--Row 1, Subtotal Entry-->
+    <LinearLayout
+        android:layout_gravity="center_horizontal|center_vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/subtotal_title"
-                    android:textSize="26sp"
-                    android:padding="20dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:textSize="26sp"
-                    android:padding="20sp"
-                    android:text="$"/>
-                <EditText
-                    android:id="@+id/subtotal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:hint="@string/subtotal_value"
-                    android:textSize="26sp"
-                    android:padding="20dp"
-                    android:inputType="numberDecimal"
-                    android:maxLines="1"/>
-            </LinearLayout>
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/subtotal_title"
+            android:textSize="26sp"
+            android:padding="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="26sp"
+            android:padding="20sp"
+            android:text="$"/>
+        <EditText
+            android:id="@+id/subtotal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:hint="@string/subtotal_value"
+            android:textSize="26sp"
+            android:padding="20dp"
+            android:inputType="numberDecimal"
+            android:maxLines="1"/>
+    </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/tipLayout"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/tip_percent_title"
-                    android:textSize="26sp"
-                    android:layout_weight="0.11"
-                    android:padding="20dp"/>
-                <SeekBar
-                    android:id="@+id/tipBar"
-                    style="@style/Widget.AppCompat.SeekBar.Discrete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:max="6"
-                    android:progress="0"
-                    android:layout_weight="0.92"
-                    android:padding="20dp"/>
+    <!--Row 2, Tip Selection-->
+    <LinearLayout
+        android:id="@+id/tipLayout"
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-                 <TextView
-                     android:id="@+id/tipValue"
-                     android:layout_width="wrap_content"
-                     android:layout_height="match_parent"
-                     android:text="@string/tip_percent"
-                     android:textSize="26sp"
-                     android:padding="20dp"/>
-            </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/tip_percent_title"
+            android:textSize="26sp"
+            android:layout_weight="0.11"
+            android:padding="20dp"/>
+        <SeekBar
+            android:id="@+id/tipBar"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:max="6"
+            android:progress="0"
+            android:layout_weight="0.92"
+            android:padding="20dp"/>
 
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/tip_title"
-                    android:textSize="26sp"
-                    android:padding="20dp"/>
-                <TextView
-                    android:id="@+id/tip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="@string/tip_value"
-                    android:textSize="26sp"
-                    android:padding="20dp"/>
-            </LinearLayout>
+         <TextView
+             android:id="@+id/tipValue"
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:text="@string/tip_percent"
+             android:textSize="26sp"
+             android:padding="20dp"/>
+    </LinearLayout>
 
-            <LinearLayout
-            android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="Total:"
-                    android:textSize="26sp"
-                    android:padding="20dp"/>
-                <TextView
-                    android:id="@+id/total"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:text="$0.0"
-                    android:textSize="26sp"
-                    android:padding="20dp"/>
-            </LinearLayout>
+    <!--Row 3,Tip Total-->
+    <LinearLayout
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/tip_title"
+            android:textSize="26sp"
+            android:padding="20dp"/>
+        <TextView
+            android:id="@+id/tip"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/tip_value"
+            android:textSize="26sp"
+            android:padding="20dp"/>
+    </LinearLayout>
 
-           <!-- <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:text="Calculate"
-                />-->
-        </LinearLayout>
-    </ScrollView>
+    <!--Row 4, Total-->
+    <LinearLayout
+    android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Total:"
+            android:textSize="26sp"
+            android:padding="20dp"/>
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="$0.0"
+            android:textSize="26sp"
+            android:padding="20dp"/>
+    </LinearLayout>
 </LinearLayout>
