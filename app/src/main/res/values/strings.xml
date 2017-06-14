@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Gratuity</string>
+    <string name="subtotal_value">0.00</string>
+    <string name="subtotal_title">Subtotal:</string>
+    <string name="tip_percent_title">Tip %:</string>
+    <string name="tip_percent">0%</string>
+    <string name="tip_title">Tip:</string>
+    <string name="tip_value">$0.00</string>
 </resources>
